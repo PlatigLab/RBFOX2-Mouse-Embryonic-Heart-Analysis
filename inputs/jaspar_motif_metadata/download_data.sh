@@ -1,0 +1,3 @@
+# Download JASPAR motif metadata
+
+wget https://jaspar.genereg.net/download/data/2022/CORE/JASPAR2022_CORE_vertebrates_non-redundant_pfms_jaspar.txt
