@@ -12,10 +12,6 @@ Input data used in multiple parts of the analysis.
 
 Output data from the analysis.
 
-📂 `RBFOX2_TF-TF_Networks/`: 
-
-Analysis on the TF-TF networks for TFs that RBFOX2 interacts with in mouse E14.5 hearts.
-
 ## Contributors 
 
 * [Yogindra Raghav](https://github.com/YogiOnBioinformatics)
