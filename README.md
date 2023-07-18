@@ -12,6 +12,11 @@ Input data used in multiple parts of the analysis.
 
 Output data from the analysis.
 
+📂 `prior_data/`:
+
+Analysis related to data from Muge & Sunny's prior `RBFOX2` [publication](https://academic.oup.com/nar/article/50/4/2270/6523805). 
+
+
 ## Contributors 
 
 * [Yogindra Raghav](https://github.com/YogiOnBioinformatics)
