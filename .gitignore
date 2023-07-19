@@ -1,3 +1,6 @@
 # ignore large data 
 prior_data/tf_analysis/2_get_data/outputs/*
 prior_data/tf_analysis/3_bedtools_intersect/outputs/*
+
+# python checkpoints
+.ipynb_checkpoints
