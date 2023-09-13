@@ -20,10 +20,19 @@ This intersection is not meant to be exact as it looks upstream of each `TSS` fo
 
 Take files from above and intersect them with `UCSC GENCODE vm23 track BED files` to annotate individual hits from above with gene names. 
 
-📂 `5_transcripts_to_genes`: 
+📂 `5_transcripts_to_genes/`: 
 
 Notebook analysis to convert transcript ids from above operation to gene ids. 
 
 Also run some basic statistics/create figures. 
+
+📂 `6_network_initialization/`: 
+
+Notebooks to create network structures in `networkx` for downstream processing. 
+
+📂 `7_iterative_louvain_clustering/`: 
+
+`Python` and `SLURM` scripts to run multiple iterations of `Louvain clustering`. 
+
 
 
