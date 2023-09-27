@@ -2,6 +2,10 @@
 
 Inputs for this analysis. 
 
+📂 `goatools_input/`:
+
+Inputs needed to run `GOAtools` analysis. 
+
 📂 `jaspar_motif_metadata/`:
 
 Metadata for `JASPAR` motifs.
