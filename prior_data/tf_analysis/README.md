@@ -28,11 +28,8 @@ Also run some basic statistics/create figures.
 
 📂 `6_network_initialization/`: 
 
-Notebooks to create network structures in `networkx` for downstream processing. 
+Notebooks to create network structures in `networkx` for downstream processing
 
-📂 `7_iterative_louvain_clustering/`: 
+📂 `7_louvain_clustering_and_gene_ontology_analysis/`: 
 
-`Python` and `SLURM` scripts to run multiple iterations of `Louvain clustering`. 
-
-
-
+`Python` scripts to run `Louvain clustering` and `Gene Ontology` analysis for each parameter combination and iteration
