@@ -16,7 +16,7 @@ network = pickle.load(open(file, 'rb'))
 parameter_combo = file.split("/")[-1].split(".")[0]
 
 # file for gene ontology associations
-associations = pickle.load(open("/home/jve4pt/resource-files/gene_ontology/mouse/gene_ontology_associations.pkl", 'rb'))
+associations = pickle.load(open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/inputs/goatools_input/mouse/gene_ontology_associations.pkl", 'rb'))
 
 # file for population (protein-coding genes)
 protein_coding_genes = []
