@@ -2,7 +2,6 @@
 prior_data/tf_analysis/2_get_data/outputs/*
 prior_data/tf_analysis/3_bedtools_intersect/outputs/*
 prior_data/tf_analysis/4_bedtools_window/outputs/*
-outputs/gene_ontology_analysis/differential_expression_networks
 outputs/louvain_clustering/
 inputs/goatools_input/mouse/mouse_annotations.tsv
 
