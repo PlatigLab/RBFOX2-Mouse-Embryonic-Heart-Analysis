@@ -48,19 +48,13 @@ enrichment_analysis_obj = GOEnrichmentStudyNS(
     GODag("go-basic.obo"), 
 
     # not propagating counts to parents of GO terms 
-    propagate_counts = False, 
-    alpha = 0.1, 
-    methods = ["fdr_bh"]
-
+    propagate_counts = False
 )
 
 for count, genes in enumerate(clustering):
 
     # run analysis
     results = enrichment_analysis_obj.run_study(genes)
-
-    # filter for significant results
-    results = [r for r in results if r.p_fdr_bh < 0.1]
     
     enrichment_analysis_obj.wr_tsv(
         "/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/{}-iter_{}-cluster_{}.tsv".format(parameter_combo, iteration, parameter_combo, iteration, count), 
