@@ -3,7 +3,7 @@ from goatools.obo_parser import GODag
 from goatools.goea.go_enrichment_ns import GOEnrichmentStudyNS
 import os
 
-os.chdir("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/prior_data/tf_analysis/7_iterative_louvain_clustering/code/")
+os.chdir("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/prior_data/tf_analysis/7_louvain_clustering_and_gene_ontology_analysis/code/")
 
 file = sys.argv[1]
 
