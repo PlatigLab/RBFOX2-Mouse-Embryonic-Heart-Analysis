@@ -29,11 +29,11 @@ with open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/inputs/goatools_in
 clustering = networkx.community.louvain_communities(network, seed=int(iteration))
 
 # make directories for louvain clustering and future gene ontology analysis
-os.makedirs("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/{}".format(parameter_combo), exist_ok=True)
-os.makedirs("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/".format(parameter_combo, iteration), exist_ok=True)
+os.makedirs("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/differential_expression_networks/{}".format(parameter_combo), exist_ok=True)
+os.makedirs("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/".format(parameter_combo, iteration), exist_ok=True)
 
 # output clustering modules
-pickle.dump(clustering, open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/{}/{}-iter_{}.pkl".format(parameter_combo, parameter_combo, iteration), 'wb'))
+pickle.dump(clustering, open("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/differential_expression_networks/{}/{}-iter_{}.pkl".format(parameter_combo, parameter_combo, iteration), 'wb'))
 
 # for each cluster
 # run Gene Ontology analysis
@@ -63,6 +63,6 @@ for count, genes in enumerate(clustering):
     results = [r for r in results if r.p_fdr_bh < 0.1]
     
     enrichment_analysis_obj.wr_tsv(
-        "/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/{}-iter_{}-cluster_{}.tsv".format(parameter_combo, iteration, parameter_combo, iteration, count), 
+        "/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/{}-iter_{}-cluster_{}.tsv".format(parameter_combo, iteration, parameter_combo, iteration, count), 
         results
     )
