@@ -29,11 +29,11 @@ with open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/inputs/goatools_in
 clustering = networkx.community.louvain_communities(network, seed=int(iteration))
 
 # make directories for louvain clustering and future gene ontology analysis
-os.makedirs("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/differential_expression_networks/{}".format(parameter_combo), exist_ok=True)
-os.makedirs("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/".format(parameter_combo, iteration), exist_ok=True)
+os.makedirs("/scratch/jve4pt/louvain_clustering/differential_expression_networks/{}/".format(parameter_combo), exist_ok=True)
+os.makedirs("/scratch/jve4pt/gene_ontology/differential_expression_networks/{}-iter_{}/".format(parameter_combo, iteration), exist_ok=True)
 
 # output clustering modules
-pickle.dump(clustering, open("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/louvain_clustering/differential_expression_networks/{}/{}-iter_{}.pkl".format(parameter_combo, parameter_combo, iteration), 'wb'))
+pickle.dump(clustering, open("/scratch/jve4pt/louvain_clustering/differential_expression_networks/{}/{}-iter_{}.pkl".format(parameter_combo, parameter_combo, iteration), 'wb'))
 
 # for each cluster
 # run Gene Ontology analysis
@@ -48,7 +48,8 @@ enrichment_analysis_obj = GOEnrichmentStudyNS(
     GODag("go-basic.obo"), 
 
     # not propagating counts to parents of GO terms 
-    propagate_counts = False
+    propagate_counts = False, 
+    methods = ["fdr_bh"]
 )
 
 for count, genes in enumerate(clustering):
@@ -57,6 +58,6 @@ for count, genes in enumerate(clustering):
     results = enrichment_analysis_obj.run_study(genes)
     
     enrichment_analysis_obj.wr_tsv(
-        "/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/outputs/gene_ontology_analysis/differential_expression_networks/output/{}-iter_{}/{}-iter_{}-cluster_{}.tsv".format(parameter_combo, iteration, parameter_combo, iteration, count), 
+        "/scratch/jve4pt/gene_ontology/differential_expression_networks/{}-iter_{}/{}-iter_{}-cluster_{}.tsv".format(parameter_combo, iteration, parameter_combo, iteration, count), 
         results
     )
