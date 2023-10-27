@@ -3,6 +3,7 @@ prior_data/tf_analysis/2_get_data/outputs/*
 prior_data/tf_analysis/3_bedtools_intersect/outputs/*
 prior_data/tf_analysis/4_bedtools_window/outputs/*
 inputs/goatools_input/mouse/mouse_annotations.tsv
+outputs/gene_ontology_analysis/differential_expression_networks/all_GO_analyses_p_uncorrected_0.05.tsv.gz
 
 
 # python checkpoints
