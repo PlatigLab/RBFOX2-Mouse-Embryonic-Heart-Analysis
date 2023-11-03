@@ -33,3 +33,7 @@ Notebooks to create network structures in `networkx` for downstream processing
 📂 `7_louvain_clustering_and_gene_ontology_analysis/`: 
 
 `Python` scripts to run `Louvain clustering` and `Gene Ontology` analysis for each parameter combination and iteration.
+
+📄 `miscellaneous_analyses.ipynb`: 
+
+This is meant for mini-analyses that do not fit cleanly into the normal workflow. 
