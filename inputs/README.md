@@ -25,3 +25,7 @@ SOURCE: http://nov2020.archive.ensembl.org/biomart/martview/ed60bc376cd5a9b775bb
 📂 `sunny_differential_analysis/`:
 
 Differential analysis done by Sunny in their [previous and related work](https://academic.oup.com/nar/article/50/4/2270/6523805). 
+
+📂 `tss_and_chromosome_sizes/`:
+
+Get reference TSS for mouse genes and mouse chromosome sizes.
