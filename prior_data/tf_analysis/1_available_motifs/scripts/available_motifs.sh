@@ -13,6 +13,7 @@ fi
 for gene in "${genes[@]}"
 do 
     echo $gene >> ../outputs/motif_ids.txt
-    grep -i "$gene" ../../../../inputs/jaspar_motif_metadata/JASPAR2022_CORE_vertebrates_non-redundant_pfms_jaspar.txt >> $output_file
+    grep -i "$gene" ../../../../inputs/jaspar_motif_metadata/JASPAR2022_CORE_vertebrates_redundant_pfms_jaspar.txt >> $output_file
 
 done
+
