@@ -15,4 +15,4 @@ do
 
 done
 
-mv * ../outputs
+mv *.tsv ../outputs
