@@ -1,9 +1,10 @@
-import pickle, sys, networkx
+import pickle, sys
+from networkx.algorithms.community import louvain_communities
 from goatools.obo_parser import GODag
 from goatools.goea.go_enrichment_ns import GOEnrichmentStudyNS
 import os
 
-os.chdir("/sfs/qumulo/qhome/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/prior_data/tf_analysis/7_louvain_clustering_and_gene_ontology_analysis/code/")
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 file = sys.argv[1]
 
@@ -16,17 +17,16 @@ network = pickle.load(open(file, 'rb'))
 parameter_combo = file.split("/")[-1].split(".")[0]
 
 # file for gene ontology associations
-associations = pickle.load(open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/inputs/goatools_input/mouse/gene_ontology_associations.pkl", 'rb'))
+associations = pickle.load(open("../../../../inputs/goatools_input/mouse/gene_ontology_associations.pkl", 'rb'))
 
 # file for population (protein-coding genes)
 protein_coding_genes = []
 
-with open("/home/jve4pt/RBFOX2-Mouse-Embryonic-Heart-Analysis/inputs/goatools_input/population.txt", 'r') as in_file: 
+with open("../../../../inputs/goatools_input/population.txt", 'r') as in_file: 
     for line in in_file: 
         protein_coding_genes.append(line.strip("\n"))
 
-# run louvain clustering with specific seed for reproducibility
-clustering = networkx.community.louvain_communities(network, seed=int(iteration))
+clustering = louvain_communities(network, seed=int(iteration))
 
 # make directories for louvain clustering and future gene ontology analysis
 os.makedirs("/scratch/jve4pt/louvain_clustering/differential_expression_networks/{}/".format(parameter_combo), exist_ok=True)
