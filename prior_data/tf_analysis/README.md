@@ -37,3 +37,18 @@ Notebooks to create network structures in `networkx` for downstream processing
 📄 `miscellaneous_analyses.ipynb`: 
 
 This is meant for mini-analyses that do not fit cleanly into the normal workflow. 
+
+📂 `8_analysis_of_GO_results`:
+
+Notebooks to analyze the results of the `Gene Ontology` analysis from above (~ 100,000 GO experiments).
+
+📂 `9_SOX4_specific_GO_results`: 
+
+Look at: 
+* `SOX4` binding to `RBFOX2` in mouse and human genomes. 
+* `GO analysis` only for `SOX4` targets. 
+
+
+📂 `10_SOX4_motif_location_for_select_genes`:
+
+Get the location of `SOX4` motifs for a set of genes that were selected by Sunny. 
